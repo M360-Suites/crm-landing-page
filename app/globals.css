@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fffaf2;
+  --foreground: #171717;
+  --color-primary: #c95c47;
+  --color-accent: #ffe4d1;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-crm-rust: var(--color-primary);
+  --color-crm-peach: var(--color-accent);
+  --color-crm-cream: var(--background);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Since we are making a specific design, we can either invert or keep the same colors. Let's keep it clean, maybe slightly darker background for dark mode, but the rust and peach stay */
+    --background: #1a1512;
+    --foreground: #fffaf2;
+    --color-primary: #e06c55;
+    --color-accent: #3a251c;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
