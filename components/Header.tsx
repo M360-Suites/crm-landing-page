@@ -38,13 +38,13 @@ export function Header() {
           <div className="flex items-center space-x-4">
             <a href="https://app.crm360online.com" className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors hidden sm:block">
               Log in
-            </Link>
+            </a>
             <a
               href="https://app.crm360online.com/register"
               className="text-sm font-medium bg-[var(--color-crm-rust)] text-white px-4 py-2 rounded-full hover:bg-opacity-90 transition-all shadow-sm"
             >
               Get Started
-            </Link>
+            </a>
           </div>
         </div>
       </div>
