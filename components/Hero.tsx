@@ -29,7 +29,9 @@ export function Hero() {
             className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-gray-900 dark:text-white mb-8"
           >
             Customer relationships, <br className="hidden md:block" />
-            <span className="text-[var(--color-crm-rust)]">beautifully managed.</span>
+            <span className="text-[var(--color-crm-rust)]">
+              beautifully managed.
+            </span>
           </motion.h1>
 
           <motion.p
@@ -38,7 +40,8 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="text-xl text-gray-600 dark:text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed"
           >
-            The modern, intuitive CRM platform designed to help your team close more deals, build lasting relationships, and scale effortlessly.
+            The modern, intuitive CRM platform designed to help your team close
+            more deals, build lasting relationships, and scale effortlessly.
           </motion.p>
 
           <motion.div
@@ -47,10 +50,13 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
-            <button className="w-full sm:w-auto px-8 py-4 bg-[var(--color-crm-rust)] text-white rounded-full font-medium text-lg hover:bg-opacity-90 transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2 group">
+            <a
+              href="https://app.crm360online.com"
+              className="w-full sm:w-auto px-8 py-4 bg-[var(--color-crm-rust)] text-white rounded-full font-medium text-lg hover:bg-opacity-90 transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2 group"
+            >
               Start for free
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
+            </a>
             <button className="w-full sm:w-auto px-8 py-4 bg-white dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700 rounded-full font-medium text-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-all">
               Book a demo
             </button>
@@ -73,7 +79,7 @@ export function Hero() {
           </motion.div>
         </div>
       </div>
-      
+
       {/* Decorative background shapes */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[var(--color-crm-peach)]/20 rounded-full blur-3xl -z-10 pointer-events-none"></div>
     </section>

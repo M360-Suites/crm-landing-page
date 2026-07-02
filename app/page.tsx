@@ -6,6 +6,7 @@ import { Features } from "@/components/Features";
 import { UseCases } from "@/components/UseCases";
 import { Pricing } from "@/components/Pricing";
 import { Resources } from "@/components/Resources";
+import { About } from "@/components/About";
 import { Footer } from "@/components/Footer";
 
 export default function Home() {
@@ -20,6 +21,7 @@ export default function Home() {
         <UseCases />
         <Pricing />
         <Resources />
+        <About />
       </main>
       <Footer />
     </div>
