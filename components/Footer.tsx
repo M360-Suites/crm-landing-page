@@ -126,7 +126,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="/privacy"
                   className="text-sm text-gray-500 dark:text-gray-400 hover:text-[var(--color-crm-rust)] transition-colors"
                 >
                   Privacy Policy
@@ -134,7 +134,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="/terms"
                   className="text-sm text-gray-500 dark:text-gray-400 hover:text-[var(--color-crm-rust)] transition-colors"
                 >
                   Terms of Service

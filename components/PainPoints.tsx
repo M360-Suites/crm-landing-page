@@ -50,7 +50,7 @@ export function PainPoints() {
                 organization
               </h3>
               <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">
-                Most sales teams aren't failing because of bad reps;
+                Most sales teams aren&apos;t failing because of bad reps;
                 they&apos;re failing because their underlying systems are
                 broken, disconnected, and frustrating to use.
               </p>

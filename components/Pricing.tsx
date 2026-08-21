@@ -37,7 +37,7 @@ export function Pricing() {
             Scale your team, not your costs
           </h3>
           <p className="text-lg text-gray-600 dark:text-gray-400">
-            We believe in pricing that scales with your success. Contact our sales team to build a custom plan that perfectly fits your organization's needs.
+            We believe in pricing that scales with your success. Contact our sales team to build a custom plan that perfectly fits your organization&apos;s needs.
           </p>
         </div>
 
