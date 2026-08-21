@@ -8,13 +8,13 @@ const tiers = [
   {
     name: "Starter",
     description: "Perfect for small teams just getting started with CRM.",
-    features: ["Up to 5 users", "Basic Inbox integration", "Pipeline management", "Standard support"],
+    features: ["Up to 5 users", "Basic Inbox integration", "Pipeline management", "Standard support", "AI writer access", "Documents"],
     highlighted: false,
   },
   {
     name: "Professional",
     description: "Ideal for growing sales teams needing advanced tools.",
-    features: ["Up to 20 users", "Advanced Analytics", "AI Writer access", "Priority support", "Custom workflows"],
+    features: ["Up to 20 users", "Advanced Analytics", "AI Writer access", "Documents", "Priority support", "Custom workflows"],
     highlighted: true,
   },
   {

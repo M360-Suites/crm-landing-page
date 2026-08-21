@@ -74,7 +74,7 @@ export function About() {
           >
             crm360 was born out of frustration. Our founders spent years running
             sales teams and watching talented reps get buried under
-            spreadsheets, siloed tools, and clunky enterprise software. In 2019,
+            spreadsheets, siloed tools, and clunky enterprise software. In 2026,
             they decided to build the CRM they always wished existed — modern,
             fast, and actually enjoyable to use.
           </motion.p>

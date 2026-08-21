@@ -120,9 +120,9 @@ export function PainPoints() {
                 </div>
               </div>
 
-              <button className="mt-8 w-full py-3 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-xl font-medium flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+              {/* <button className="mt-8 w-full py-3 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-xl font-medium flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
                 See how we fix this <ArrowRight className="w-4 h-4" />
-              </button>
+              </button> */}
             </div>
           </motion.div>
         </div>
