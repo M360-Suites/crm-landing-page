@@ -1,94 +1,89 @@
-"use client";
-
-import React from "react";
-import { motion } from "framer-motion";
-import { CheckCircle2, PhoneCall } from "lucide-react";
+import { Check } from "lucide-react";
+import { SectionHeader } from "@/components/shared/SectionHeader";
 
 const tiers = [
   {
     name: "Starter",
-    description: "Perfect for small teams just getting started with CRM.",
-    features: ["Up to 5 users", "Basic Inbox integration", "Pipeline management", "Standard support", "AI writer access", "Documents"],
+    description: "For small teams setting up their first CRM.",
+    features: ["Up to 5 users", "Basic inbox integration", "Pipeline management", "AI Writer", "Documents", "Standard support"],
     highlighted: false,
   },
   {
     name: "Professional",
-    description: "Ideal for growing sales teams needing advanced tools.",
-    features: ["Up to 20 users", "Advanced Analytics", "AI Writer access", "Documents", "Priority support", "Custom workflows"],
+    description: "For growing sales teams that need deeper reporting.",
+    features: ["Up to 20 users", "Advanced analytics", "AI Writer", "Documents", "Custom workflows", "Priority support"],
     highlighted: true,
   },
   {
     name: "Enterprise",
     description: "For large organizations with complex sales processes.",
-    features: ["Unlimited users", "Dedicated account manager", "Custom integrations", "24/7 phone support", "Advanced security"],
+    features: ["Unlimited users", "Dedicated account manager", "Custom integrations", "Advanced security", "24/7 phone support"],
     highlighted: false,
   },
 ];
 
+const salesHref = (plan: string) =>
+  `mailto:support@crm360online.com?subject=${encodeURIComponent(`crm360 ${plan} plan quote`)}`;
+
 export function Pricing() {
   return (
-    <section id="pricing" className="py-24 bg-white dark:bg-[#111111]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-sm font-semibold tracking-wide text-[var(--color-crm-rust)] uppercase mb-3">
-            Tailored Pricing
-          </h2>
-          <h3 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
-            Scale your team, not your costs
-          </h3>
-          <p className="text-lg text-gray-600 dark:text-gray-400">
-            We believe in pricing that scales with your success. Contact our sales team to build a custom plan that perfectly fits your organization&apos;s needs.
-          </p>
-        </div>
+    <section id="pricing" className="px-3 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto rounded-[2.5rem] bg-lilac text-on-color border-[3px] border-on-color px-5 py-14 sm:px-12 lg:px-16 lg:py-20">
+        <SectionHeader
+          title="A plan built around your team, not a price list."
+          description={
+            <>
+              Every plan is priced to your team size and needs. Talk to sales and
+              we&apos;ll put together a quote.
+            </>
+          }
+        />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {tiers.map((tier, index) => (
-            <motion.div
-              key={tier.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`rounded-2xl p-8 border ${
-                tier.highlighted 
-                  ? "border-[var(--color-crm-rust)] shadow-lg relative bg-gray-50 dark:bg-[#151515]" 
-                  : "border-gray-200 dark:border-gray-800 bg-white dark:bg-[#111111]"
-              } flex flex-col`}
-            >
-              {tier.highlighted && (
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[var(--color-crm-rust)] text-white text-xs font-bold uppercase tracking-wider py-1 px-3 rounded-full">
-                  Most Popular
-                </div>
-              )}
-              
-              <h4 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">{tier.name}</h4>
-              <p className="text-gray-600 dark:text-gray-400 text-sm mb-6 flex-1">{tier.description}</p>
-              
-              <div className="text-3xl font-bold text-gray-900 dark:text-white mb-8">
-                Custom
-              </div>
-
-              <ul className="space-y-4 mb-8">
-                {tier.features.map((feature) => (
-                  <li key={feature} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-[var(--color-crm-rust)] shrink-0" />
-                    <span className="text-sm text-gray-700 dark:text-gray-300">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <button 
-                className={`w-full py-3 px-4 rounded-xl font-medium transition-all flex items-center justify-center gap-2 ${
+        <div className="mt-14 grid md:grid-cols-3 gap-5 items-start">
+          {tiers.map((tier) => {
+            const [seats, ...rest] = tier.features;
+            return (
+              <div
+                key={tier.name}
+                className={`relative rounded-[2rem] border-[3px] border-on-color p-7 flex flex-col ${
                   tier.highlighted
-                    ? "bg-[var(--color-crm-rust)] text-white hover:bg-opacity-90 shadow-md"
-                    : "bg-[var(--color-crm-peach)]/30 text-[var(--color-crm-rust)] hover:bg-[var(--color-crm-peach)]/50"
+                    ? "bg-blue text-white md:-translate-y-4 shadow-[0_8px_0_var(--on-color)]"
+                    : "bg-white text-on-color"
                 }`}
               >
-                <PhoneCall className="w-4 h-4" />
-                Contact Sales
-              </button>
-            </motion.div>
-          ))}
+                {tier.highlighted && (
+                  <span className="absolute -top-4 right-6 rotate-6 px-3.5 py-1.5 rounded-full bg-sun text-on-color border-2 border-on-color text-sm font-bold">
+                    Most popular
+                  </span>
+                )}
+                <h3 className="font-display text-xl font-bold">{tier.name}</h3>
+                <p className="mt-4 font-display text-4xl font-extrabold tracking-[-0.04em]">
+                  {seats}
+                </p>
+                <p className="mt-2 text-sm opacity-75 min-h-10">{tier.description}</p>
+
+                <a
+                  href={salesHref(tier.name)}
+                  className={`mt-6 w-full py-3.5 rounded-full text-center font-bold border-[3px] border-on-color transition-colors ${
+                    tier.highlighted
+                      ? "bg-sun text-on-color hover:bg-white"
+                      : "bg-white text-on-color hover:bg-sun"
+                  }`}
+                >
+                  Contact sales
+                </a>
+
+                <ul className="mt-7 pt-6 border-t-2 border-current/15 space-y-3">
+                  {rest.map((feature) => (
+                    <li key={feature} className="flex items-start gap-3 text-sm">
+                      <Check className="w-4 h-4 mt-0.5 shrink-0" strokeWidth={3} />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

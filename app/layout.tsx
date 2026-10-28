@@ -1,21 +1,32 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Instrument_Sans, Bricolage_Grotesque } from "next/font/google";
+import { Header } from "@/components/shared/Header";
+import { Footer } from "@/components/shared/Footer";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const instrumentSans = Instrument_Sans({
+  variable: "--font-instrument",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const bricolageGrotesque = Bricolage_Grotesque({
+  variable: "--font-bricolage",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
   title: "crm360 | The Modern CRM for Growing Sales Teams",
-  description: "crm360 is the ultimate CRM platform designed to help SMEs and Enterprise organizations close more deals, eliminate data silos, and scale effortlessly.",
-  keywords: ["CRM", "Sales Platform", "Customer Relationship Management", "Sales Automation", "B2B Sales", "SaaS CRM", "AI CRM"],
+  description:
+    "crm360 is the ultimate CRM platform designed to help SMEs and Enterprise organizations close more deals, eliminate data silos, and scale effortlessly.",
+  keywords: [
+    "CRM",
+    "Sales Platform",
+    "Customer Relationship Management",
+    "Sales Automation",
+    "B2B Sales",
+    "SaaS CRM",
+    "AI CRM",
+  ],
   authors: [{ name: "crm360 Team" }],
   creator: "crm360 Inc.",
   publisher: "crm360 Inc.",
@@ -26,7 +37,8 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "crm360 | The Modern CRM for Growing Sales Teams",
-    description: "Stop running your business on spreadsheets. Move fast, stay organized, and look bigger than you are with automated professional workflows.",
+    description:
+      "Stop running your business on spreadsheets. Move fast, stay organized, and look bigger than you are with automated professional workflows.",
     url: "https://crm360online.com",
     siteName: "crm360",
     images: [
@@ -34,7 +46,7 @@ export const metadata: Metadata = {
         url: "https://crm360online.com/og-image.jpg", // Placeholder
         width: 1200,
         height: 630,
-        alt: "crm360 Dashboard Preview",
+        alt: "crm360",
       },
     ],
     locale: "en_US",
@@ -43,7 +55,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "crm360 | The Modern CRM for Growing Sales Teams",
-    description: "The ultimate CRM platform designed to help SMEs and Enterprise organizations close more deals and scale effortlessly.",
+    description:
+      "The ultimate CRM platform designed to help SMEs and Enterprise organizations close more deals and scale effortlessly.",
     creator: "@crm360_app",
     images: ["https://crm360online.com/twitter-image.jpg"], // Placeholder
   },
@@ -68,9 +81,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${instrumentSans.variable} ${bricolageGrotesque.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <Header />
+        <main className="flex-1">{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }

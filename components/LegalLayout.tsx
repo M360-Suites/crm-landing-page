@@ -2,8 +2,6 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import {
   FileText,
   ShieldCheck,
@@ -89,7 +87,6 @@ export function LegalLayout({
 
   return (
     <div className="min-h-screen flex flex-col font-sans selection:bg-[var(--color-crm-peach)] selection:text-[var(--color-crm-rust)] bg-[var(--background)] text-gray-900 dark:text-gray-100">
-      <Header />
 
       <main className="flex-1 pt-24 pb-20 print:pt-4 print:pb-4">
         {/* Document Banner */}
@@ -318,7 +315,6 @@ export function LegalLayout({
         </div>
       </main>
 
-      <Footer />
     </div>
   );
 }

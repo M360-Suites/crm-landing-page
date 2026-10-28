@@ -1,106 +1,206 @@
-"use client";
-
-import React from "react";
-import { motion } from "framer-motion";
-import { 
-  Inbox, 
-  Users, 
-  Building2, 
-  KanbanSquare, 
-  Calendar, 
-  FileText, 
-  Bot, 
-  BarChart3, 
-  PieChart 
+import {
+  Inbox,
+  Users,
+  Building2,
+  KanbanSquare,
+  Calendar,
+  FileText,
+  Bot,
+  BarChart3,
+  PieChart,
 } from "lucide-react";
+import { SectionHeader } from "@/components/shared/SectionHeader";
+import {
+  BubbleSticker,
+  EnvelopeSticker,
+  SparkleSticker,
+  WonSticker,
+} from "@/components/shared/Stickers";
 
-const features = [
+type Art = "talk" | "people" | "close";
+
+const groups: {
+  art: Art;
+  tile: string;
+  title: string;
+  summary: string;
+  features: { title: string; description: string; icon: typeof Inbox }[];
+}[] = [
   {
-    title: "Inbox",
-    description: "Centralize all your team's communications. Connect email, social media, and chat in one unified workspace.",
-    icon: Inbox,
+    art: "talk",
+    tile: "bg-lilac",
+    title: "Talk to customers",
+    summary: "Every conversation and document in one place, with help writing the next message.",
+    features: [
+      {
+        title: "Inbox",
+        description: "Email, social and chat messages land in one shared inbox your whole team can work from.",
+        icon: Inbox,
+      },
+      {
+        title: "AI Writer",
+        description: "Draft personal emails and follow-ups in seconds, based on what the customer actually said.",
+        icon: Bot,
+      },
+      {
+        title: "Documents",
+        description: "Send proposals and contracts, then see when clients open and sign them.",
+        icon: FileText,
+      },
+    ],
   },
   {
-    title: "Contacts",
-    description: "Manage relationships with intelligent profiles that automatically enrich data from public sources.",
-    icon: Users,
+    art: "people",
+    tile: "bg-sun",
+    title: "Keep track of people",
+    summary: "Know who you're dealing with and what you promised them.",
+    features: [
+      {
+        title: "Contacts",
+        description: "Profiles that fill in details from public sources, so you don't type them in.",
+        icon: Users,
+      },
+      {
+        title: "Companies",
+        description: "Group contacts by account and map who reports to whom.",
+        icon: Building2,
+      },
+      {
+        title: "Task & Calendar",
+        description: "Schedule meetings, set reminders and sync with Google or Outlook.",
+        icon: Calendar,
+      },
+    ],
   },
   {
-    title: "Companies",
-    description: "Organize accounts and track organizational hierarchies to better understand your target enterprises.",
-    icon: Building2,
-  },
-  {
-    title: "Pipelines",
-    description: "Customize your sales process with drag-and-drop boards that visualize exactly where every deal stands.",
-    icon: KanbanSquare,
-  },
-  {
-    title: "Task & Calendar",
-    description: "Never miss a follow-up. Schedule meetings, set reminders, and sync with Google or Outlook.",
-    icon: Calendar,
-  },
-  {
-    title: "Documents",
-    description: "Create, store, and send proposals or contracts securely. Track when clients open and sign.",
-    icon: FileText,
-  },
-  {
-    title: "AI Writer",
-    description: "Draft personalized emails and follow-ups in seconds with our context-aware AI assistant.",
-    icon: Bot,
-  },
-  {
-    title: "Analytics",
-    description: "Uncover insights with powerful dashboards. Track team performance, deal velocity, and revenue forecasts.",
-    icon: BarChart3,
-  },
-  {
-    title: "Report",
-    description: "Generate beautiful, automated reports to share with stakeholders on a regular cadence.",
-    icon: PieChart,
+    art: "close",
+    tile: "bg-mint",
+    title: "Close and measure",
+    summary: "See what's moving, what's stuck and what next quarter looks like.",
+    features: [
+      {
+        title: "Pipelines",
+        description: "Drag deals between stages you define. Each board shows the value at every step.",
+        icon: KanbanSquare,
+      },
+      {
+        title: "Analytics",
+        description: "Track team performance, deal velocity and revenue forecasts as they change.",
+        icon: BarChart3,
+      },
+      {
+        title: "Report",
+        description: "Scheduled reports that go to stakeholders without anyone building them by hand.",
+        icon: PieChart,
+      },
+    ],
   },
 ];
 
 export function Features() {
   return (
-    <section id="features" className="py-24 bg-gray-50 dark:bg-[#0f0f0f]">
+    <section id="features" className="py-24 lg:py-32 text-ink">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-sm font-semibold tracking-wide text-[var(--color-crm-rust)] uppercase mb-3">
-            Everything you need
-          </h2>
-          <h3 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
-            A complete toolkit for modern sales teams
-          </h3>
-          <p className="text-lg text-gray-600 dark:text-gray-400">
-            Stop switching between disjointed apps. crm360 brings your entire customer journey into one beautifully designed platform.
-          </p>
-        </div>
+        <SectionHeader
+          title="Nine tools your team would otherwise pay for separately."
+          description="crm360 covers the whole customer journey, from first message to signed contract to the quarterly report."
+        />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {features.map((feature, index) => (
-            <motion.div
-              key={feature.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white dark:bg-[#151515] rounded-2xl p-8 border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md transition-shadow group"
-            >
-              <div className="w-12 h-12 rounded-xl bg-[var(--color-crm-peach)]/30 text-[var(--color-crm-rust)] flex items-center justify-center mb-6 group-hover:bg-[var(--color-crm-rust)] group-hover:text-white transition-colors">
-                <feature.icon className="w-6 h-6" />
+        <div className="mt-16 grid lg:grid-cols-3 gap-x-6 gap-y-14">
+          {groups.map((group) => (
+            <article key={group.title}>
+              <div
+                aria-hidden
+                className={`relative aspect-[4/3] rounded-[2rem] border-[3px] border-on-color overflow-hidden ${group.tile}`}
+              >
+                {group.art === "talk" && <TalkArt />}
+                {group.art === "people" && <PeopleArt />}
+                {group.art === "close" && <CloseArt />}
               </div>
-              <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
-                {feature.title}
-              </h4>
-              <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                {feature.description}
-              </p>
-            </motion.div>
+              <h3 className="mt-7 font-display text-3xl font-extrabold tracking-[-0.035em]">
+                {group.title}
+              </h3>
+              <p className="mt-2 text-ink-2 leading-relaxed">{group.summary}</p>
+              <ul className="mt-6 space-y-4">
+                {group.features.map((f) => (
+                  <li key={f.title} className="flex gap-3.5">
+                    <f.icon className="w-5 h-5 mt-0.5 shrink-0 text-blue" strokeWidth={2.4} />
+                    <p className="text-sm text-ink-2 leading-relaxed">
+                      <span className="font-bold text-ink">{f.title}.</span>{" "}
+                      {f.description}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            </article>
           ))}
         </div>
       </div>
     </section>
+  );
+}
+
+const INK = "var(--on-color)";
+
+// Messages from everywhere arrive in one place, and the AI writes back.
+function TalkArt() {
+  return (
+    <>
+      <BubbleSticker className="absolute left-[12%] top-[18%] w-[52%] -rotate-6" />
+      <EnvelopeSticker className="absolute right-[8%] top-[6%] w-[34%] rotate-12" />
+      <SparkleSticker className="absolute right-[12%] bottom-[6%] w-[30%]" />
+    </>
+  );
+}
+
+// One account at the top, the people who work there below it.
+function PeopleArt() {
+  const people = [
+    { x: 60, fill: "var(--bubble)" },
+    { x: 160, fill: "var(--sky)" },
+    { x: 260, fill: "var(--mint)" },
+  ];
+  return (
+    <svg viewBox="0 0 320 240" className="absolute inset-0 w-full h-full">
+      <path d="M160 96 V130 M60 130 H260 M60 130 V150 M160 130 V150 M260 130 V150" fill="none" stroke={INK} strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+      <rect x="104" y="30" width="112" height="66" rx="16" fill="#ffffff" stroke={INK} strokeWidth="4" />
+      <rect x="120" y="46" width="34" height="34" rx="8" fill="var(--blue)" stroke={INK} strokeWidth="3" />
+      <rect x="164" y="50" width="38" height="8" rx="4" fill={INK} />
+      <rect x="164" y="66" width="26" height="8" rx="4" fill={INK} opacity="0.35" />
+      {people.map((p) => (
+        <g key={p.x}>
+          <circle cx={p.x} cy="182" r="32" fill={p.fill} stroke={INK} strokeWidth="4" />
+          <circle cx={p.x - 10} cy="176" r="3.5" fill={INK} />
+          <circle cx={p.x + 10} cy="176" r="3.5" fill={INK} />
+          <path d={`M${p.x - 11} 190 q11 10 22 0`} fill="none" stroke={INK} strokeWidth="4" strokeLinecap="round" />
+        </g>
+      ))}
+    </svg>
+  );
+}
+
+// A deal climbs the stages and lands on Won.
+function CloseArt() {
+  return (
+    <>
+      <svg viewBox="0 0 320 240" className="absolute inset-0 w-full h-full">
+        <path
+          d="M28 212 V176 H84 V140 H140 V104 H196 V68 H252 V212Z"
+          fill="#ffffff"
+          stroke={INK}
+          strokeWidth="4"
+          strokeLinejoin="round"
+        />
+        <path d="M84 176 V212 M140 140 V212 M196 104 V212" stroke={INK} strokeWidth="3" strokeDasharray="6 7" />
+        {[
+          { x: 56, y: 196 },
+          { x: 112, y: 160 },
+          { x: 168, y: 124 },
+        ].map((d) => (
+          <circle key={d.x} cx={d.x} cy={d.y} r="9" fill="var(--blue)" stroke={INK} strokeWidth="3" />
+        ))}
+      </svg>
+      <WonSticker className="absolute right-[4%] top-[4%] w-[30%] rotate-12" />
+    </>
   );
 }

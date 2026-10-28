@@ -1,34 +1,122 @@
 @import "tailwindcss";
 
+/* Palette taken from CRM-client (app/globals.css + component colors) */
 :root {
-  --background: #fffaf2;
-  --foreground: #171717;
-  --color-primary: #c95c47;
-  --color-accent: #ffe4d1;
+  --paper: #ffffff;
+  --mist: #f2f7fb;
+  --ice: #e6f2ff;
+  --line: #d9e1e8;
+  --ink: #0f172a;
+  --ink-2: #334155;
+  --ink-3: #5c6470;
+  --blue: #0091fe;
+  --blue-deep: #0076d6;
+  --teal: #00b3a6;
+  --teal-soft: #d8f3f1;
+  --clay: #e2725b;
+  --clay-soft: #fff3e6;
+  --sidebar: #fbfdff;
+
+  /* Sticker colours: identical in light and dark, text on them uses --on-color */
+  --sun: #ffd23f;
+  --bubble: #ff8fb8;
+  --lilac: #c4b5fd;
+  --mint: #5ee0c4;
+  --sky: #8fd3ff;
+  --on-color: #0f172a;
+
+  /* Legacy names still used by the legal pages */
+  --background: var(--paper);
+  --foreground: var(--ink);
+  --color-primary: var(--blue-deep);
+  --color-accent: var(--ice);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #0c1422;
+    --mist: #111c2e;
+    --ice: #0f2a47;
+    --line: #22324a;
+    --ink: #e8eef5;
+    --ink-2: #b4c0cf;
+    --ink-3: #8593a6;
+    --blue: #2ea3ff;
+    --blue-deep: #5ab6ff;
+    --teal: #2fd1c3;
+    --teal-soft: #0c3532;
+    --clay: #f08a74;
+    --clay-soft: #33201a;
+    --sidebar: #0f1828;
+  }
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-paper: var(--paper);
+  --color-mist: var(--mist);
+  --color-ice: var(--ice);
+  --color-line: var(--line);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-blue: var(--blue);
+  --color-blue-deep: var(--blue-deep);
+  --color-teal: var(--teal);
+  --color-teal-soft: var(--teal-soft);
+  --color-clay: var(--clay);
+  --color-clay-soft: var(--clay-soft);
+  --color-sidebar: var(--sidebar);
+  --color-sun: var(--sun);
+  --color-bubble: var(--bubble);
+  --color-lilac: var(--lilac);
+  --color-mint: var(--mint);
+  --color-sky: var(--sky);
+  --color-on-color: var(--on-color);
   --color-crm-rust: var(--color-primary);
   --color-crm-peach: var(--color-accent);
   --color-crm-cream: var(--background);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-instrument);
+  --font-display: var(--font-bricolage);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* Since we are making a specific design, we can either invert or keep the same colors. Let's keep it clean, maybe slightly darker background for dark mode, but the rust and peach stay */
-    --background: #1a1512;
-    --foreground: #fffaf2;
-    --color-primary: #e06c55;
-    --color-accent: #3a251c;
-  }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-instrument), system-ui, sans-serif;
+}
+
+:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee {
+  animation: marquee 38s linear infinite;
+}
+
+.marquee:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .marquee {
+    animation: none;
+  }
 }

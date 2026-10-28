@@ -1,131 +1,57 @@
-"use client";
+import { SectionHeader } from "@/components/shared/SectionHeader";
 
-import React from "react";
-import { motion } from "framer-motion";
-import { XCircle, ArrowRight } from "lucide-react";
-
-const painPoints = [
+const pairs = [
   {
-    title: "Scattered Customer Data",
-    description:
-      "Your team wastes hours jumping between emails, spreadsheets, and chat apps just to find a single client interaction.",
+    pain: "Customer history is spread across email, spreadsheets and chat apps.",
+    fix: "Every email, call and note sits on the contact's profile.",
   },
   {
-    title: "Leaking Sales Pipelines",
-    description:
-      "Leads are falling through the cracks because there's no clear visibility into deal stages or required follow-ups.",
+    pain: "Leads slip away because no one can see which deals need a follow-up.",
+    fix: "The pipeline shows each deal's stage and flags the ones going quiet.",
   },
   {
-    title: "Generic Outreach",
-    description:
-      "Your cold emails look exactly like your competitors', resulting in terrible open rates and wasted marketing spend.",
+    pain: "Outreach reads like every competitor's, so open rates stay low.",
+    fix: "AI Writer drafts from your real conversations with that customer.",
   },
   {
-    title: "Manual Data Entry",
-    description:
-      "Sales reps are spending 30% of their day doing administrative work instead of actually selling to prospects.",
+    pain: "Reps lose close to a third of the day to admin and data entry.",
+    fix: "Logging, reminders and follow-ups happen automatically.",
   },
 ];
 
 export function PainPoints() {
   return (
-    <section
-      id="why-crm360"
-      className="py-24 bg-white dark:bg-[#111111] border-b border-gray-100 dark:border-gray-800"
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
+    <section id="why-crm360" className="px-3 sm:px-6 lg:px-8 pt-24 lg:pt-32">
+      <div className="max-w-7xl mx-auto rounded-[2.5rem] bg-blue text-white border-[3px] border-on-color px-6 py-14 sm:px-12 lg:px-16 lg:py-20">
+        <SectionHeader
+          title={
+            <>
+              Most sales teams don&apos;t have a people problem. They have a
+              tools problem.
+            </>
+          }
+          description="Good reps miss targets when the system around them is scattered. Here is what changes when it isn't."
+        />
+
+        <ul className="mt-14 grid gap-4 md:grid-cols-2">
+          {pairs.map((p) => (
+            <li
+              key={p.pain}
+              className="rounded-3xl bg-paper text-ink border-[3px] border-on-color p-6 lg:p-7"
             >
-              <h2 className="text-sm font-semibold tracking-wide text-red-500 uppercase mb-3">
-                The Problem
-              </h2>
-              <h3 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
-                Sales shouldn&apos;t feel like a constant struggle for
-                organization
-              </h3>
-              <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">
-                Most sales teams aren&apos;t failing because of bad reps;
-                they&apos;re failing because their underlying systems are
-                broken, disconnected, and frustrating to use.
+              <p className="text-ink-3 line-through decoration-bubble decoration-[3px]">
+                {p.pain}
               </p>
-
-              <div className="space-y-6">
-                {painPoints.map((point, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: index * 0.1 }}
-                    className="flex gap-4"
-                  >
-                    <XCircle className="w-6 h-6 text-red-400 shrink-0 mt-0.5" />
-                    <div>
-                      <h4 className="font-semibold text-gray-900 dark:text-white mb-1">
-                        {point.title}
-                      </h4>
-                      <p className="text-gray-600 dark:text-gray-400 text-sm">
-                        {point.description}
-                      </p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="relative"
-          >
-            <div className="absolute -inset-4 bg-red-50 dark:bg-red-900/10 rounded-3xl transform rotate-3 -z-10"></div>
-            <div className="bg-gray-50 dark:bg-[#151515] border border-gray-200 dark:border-gray-800 rounded-2xl p-8 shadow-xl">
-              <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-6">
-                The crm360 Difference
-              </h4>
-
-              <div className="space-y-4">
-                <div className="bg-white dark:bg-[#1a1a1a] p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-full bg-green-100 dark:bg-green-900/30 text-green-600 flex items-center justify-center font-bold">
-                    1
-                  </div>
-                  <p className="text-sm font-medium text-gray-800 dark:text-gray-200">
-                    Unified data means absolute context
-                  </p>
-                </div>
-                <div className="bg-white dark:bg-[#1a1a1a] p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 flex items-center gap-4 ml-6">
-                  <div className="w-10 h-10 rounded-full bg-green-100 dark:bg-green-900/30 text-green-600 flex items-center justify-center font-bold">
-                    2
-                  </div>
-                  <p className="text-sm font-medium text-gray-800 dark:text-gray-200">
-                    Visual pipelines prevent missed deals
-                  </p>
-                </div>
-                <div className="bg-white dark:bg-[#1a1a1a] p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 flex items-center gap-4 ml-12">
-                  <div className="w-10 h-10 rounded-full bg-[var(--color-crm-peach)]/40 text-[var(--color-crm-rust)] flex items-center justify-center font-bold">
-                    3
-                  </div>
-                  <p className="text-sm font-medium text-gray-800 dark:text-gray-200">
-                    AI handles the repetitive grunt work
-                  </p>
-                </div>
-              </div>
-
-              {/* <button className="mt-8 w-full py-3 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-xl font-medium flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
-                See how we fix this <ArrowRight className="w-4 h-4" />
-              </button> */}
-            </div>
-          </motion.div>
-        </div>
+              <p className="mt-4 flex gap-3 font-display text-xl font-bold leading-snug tracking-[-0.02em]">
+                <svg viewBox="0 0 24 24" className="w-7 h-7 shrink-0" aria-hidden>
+                  <circle cx="12" cy="12" r="11" fill="var(--mint)" stroke="var(--on-color)" strokeWidth="2" />
+                  <path d="M7 12.5 L10.5 16 L17 8.5" fill="none" stroke="var(--on-color)" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+                {p.fix}
+              </p>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );
