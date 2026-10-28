@@ -5,7 +5,6 @@ import { Automation } from "@/components/Automation";
 import { MoreFeatures } from "@/components/MoreFeatures";
 import { UseCases } from "@/components/UseCases";
 import { Pricing } from "@/components/Pricing";
-import { Resources } from "@/components/Resources";
 import { About } from "@/components/About";
 import { FinalCta } from "@/components/FinalCta";
 
@@ -19,7 +18,6 @@ export default function Home() {
       <MoreFeatures />
       <UseCases />
       <Pricing />
-      <Resources />
       <About />
       <FinalCta />
     </>

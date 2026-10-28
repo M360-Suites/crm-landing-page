@@ -41,7 +41,7 @@ export default function PrivacyPolicyPage() {
   return (
     <LegalLayout
       title="Privacy Policy"
-      subtitle="Transparency matters. Here is how CRM360 collects, protects, processes, and respects your personal data across our services."
+      subtitle="Transparency matters. Here is how crm360 collects, protects, processes, and respects your personal data across our services."
       effectiveDate="August 21, 2026"
       readTime="5 min"
       activeDoc="privacy"
@@ -50,10 +50,10 @@ export default function PrivacyPolicyPage() {
       {/* Preamble */}
       <div className="p-6 rounded-2xl bg-[var(--color-crm-peach)]/30 dark:bg-[#2d1a13]/40 border border-[var(--color-crm-rust)]/20 mb-10">
         <p className="text-base leading-relaxed text-gray-800 dark:text-gray-200">
-          <strong>CRM360</strong> (&quot;CRM360&quot;, &quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) respects your privacy. This Privacy Policy explains how we collect, use, disclose, store, and protect personal data when you access or use our website, application, and related services.
+          <strong>crm360</strong> is operated by <strong>M360 Group</strong> (&quot;M360 Group&quot;, &quot;we&quot;, &quot;us&quot;, or &quot;our&quot;). We respect your privacy. This Privacy Policy explains how we collect, use, disclose, store, and protect personal data when you access or use our website, application, and related services.
         </p>
         <p className="text-sm mt-3 text-gray-600 dark:text-gray-400">
-          By accessing or using CRM360, you acknowledge that you have read and understood this Privacy Policy. Where required by applicable law, we will obtain your consent or rely on another lawful basis before processing your personal data.
+          By accessing or using crm360, you acknowledge that you have read and understood this Privacy Policy. Where required by applicable law, we will obtain your consent or rely on another lawful basis before processing your personal data.
         </p>
       </div>
 
@@ -80,7 +80,7 @@ export default function PrivacyPolicyPage() {
                 a) Account Information
               </h3>
               <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
-                When you create an account, invited to use CRM360 or otherwise register to use the service, we may collect your name, email address, password, organization name, role, and profile information.
+                When you create an account, are invited to use crm360, or otherwise register to use the service, we may collect your name, email address, password, organization name, role, and profile information.
               </p>
             </div>
 
@@ -90,7 +90,7 @@ export default function PrivacyPolicyPage() {
                 b) Customer Relationship Data
               </h3>
               <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
-                CRM360 enables users to manage contacts, companies, deals, tasks, documents, emails, notes, and related business records. Such information is typically provided by users and is controlled by the organization using the service.
+                crm360 enables users to manage contacts, companies, deals, tasks, documents, emails, notes, and related business records. Such information is typically provided by users and is controlled by the organization using the service.
               </p>
             </div>
 
@@ -110,7 +110,7 @@ export default function PrivacyPolicyPage() {
                 d) Usage Information
               </h3>
               <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
-                We may collect information about your use of CRM360, including pages visited, features used, actions taken, device type, browser type, IP address, log data, and similar technical information.
+                We may collect information about your use of crm360, including pages visited, features used, actions taken, device type, browser type, IP address, log data, and similar technical information.
               </p>
             </div>
           </div>
@@ -143,7 +143,7 @@ export default function PrivacyPolicyPage() {
 
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {[
-              { letter: "a", text: "provide, operate, maintain, and improve CRM360;" },
+              { letter: "a", text: "provide, operate, maintain, and improve crm360;" },
               { letter: "b", text: "create and manage user accounts;" },
               { letter: "c", text: "manage CRM records such as contacts, companies, deals, tasks, documents, and emails;" },
               { letter: "d", text: "authenticate users and protect accounts;" },
@@ -185,10 +185,10 @@ export default function PrivacyPolicyPage() {
           <div className="space-y-3">
             {[
               { letter: "a", title: "Authorized Organization Users", text: "to authorized users within the same organization account;" },
-              { letter: "b", title: "Vetted Service Providers", text: "to service providers that assist us in operating CRM360, including hosting, email delivery, cloud storage, analytics, and security services;" },
+              { letter: "b", title: "Vetted Service Providers", text: "to service providers that assist us in operating crm360, including hosting, email delivery, cloud storage, analytics, and security services;" },
               { letter: "c", title: "Third-Party Integrations", text: "to third party integrations when a user authorizes such connection;" },
               { letter: "d", title: "Legal Requirements", text: "if required by law, regulation, court order, or other legal process;" },
-              { letter: "e", title: "Protection & Corporate Transactions", text: "to protect the rights, safety, security, and property of CRM360, our users, or others; and in connection with a merger, acquisition, financing, restructuring, or sale of assets." },
+              { letter: "e", title: "Protection & Corporate Transactions", text: "to protect the rights, safety, security, and property of crm360, our users, or others; and in connection with a merger, acquisition, financing, restructuring, or sale of assets." },
             ].map((item) => (
               <div
                 key={item.letter}
@@ -258,7 +258,7 @@ export default function PrivacyPolicyPage() {
             <div className="p-4 rounded-2xl bg-gray-50 dark:bg-gray-700/40 border border-gray-100 dark:border-gray-700 flex items-start gap-3">
               <span className="font-mono font-bold text-[var(--color-crm-rust)] mt-0.5">a)</span>
               <p className="text-sm leading-relaxed">
-                We retain personal data for as long as necessary to provide CRM360, comply with legal and regulatory obligations, resolve disputes, enforce agreements, maintain business records, and for other legitimate business purposes permitted by law.
+                We retain personal data for as long as necessary to provide crm360, comply with legal and regulatory obligations, resolve disputes, enforce agreements, maintain business records, and for other legitimate business purposes permitted by law.
               </p>
             </div>
             <div className="p-4 rounded-2xl bg-gray-50 dark:bg-gray-700/40 border border-gray-100 dark:border-gray-700 flex items-start gap-3">
@@ -291,7 +291,7 @@ export default function PrivacyPolicyPage() {
             <div className="p-4 rounded-2xl bg-gray-50 dark:bg-gray-700/40 border border-gray-100 dark:border-gray-700 flex items-start gap-3">
               <span className="font-mono font-bold text-[var(--color-crm-rust)] mt-0.5">b)</span>
               <p className="text-sm leading-relaxed">
-                You may update certain account information within CRM360. For other requests, do well to contact us using our contacts details. Where required, we may ask you to verify your identity before responding to your request.
+                You may update certain account information within crm360. For other requests, contact us using the details below. Where required, we may ask you to verify your identity before responding to your request.
               </p>
             </div>
           </div>
@@ -312,7 +312,7 @@ export default function PrivacyPolicyPage() {
             <div className="p-4 rounded-2xl bg-gray-50 dark:bg-gray-700/40 border border-gray-100 dark:border-gray-700 flex items-start gap-3">
               <span className="font-mono font-bold text-[var(--color-crm-rust)] mt-0.5">a)</span>
               <p className="text-sm leading-relaxed">
-                CRM360 may integrate with third party services such as email providers, cloud storage providers, or communication tools. Your use of those third party services is governed by their own privacy policies and terms.
+                crm360 may integrate with third party services such as email providers, cloud storage providers, or communication tools. Your use of those third party services is governed by their own privacy policies and terms.
               </p>
             </div>
             <div className="p-4 rounded-2xl bg-gray-50 dark:bg-gray-700/40 border border-gray-100 dark:border-gray-700 flex items-start gap-3">
@@ -337,7 +337,7 @@ export default function PrivacyPolicyPage() {
           </div>
           <div className="p-5 rounded-2xl bg-gray-50 dark:bg-gray-700/40 border border-gray-100 dark:border-gray-700">
             <p className="text-sm leading-relaxed text-gray-700 dark:text-gray-300">
-              CRM360 is intended for business use and is not directed to children. We do not knowingly collect personal data from children. If we become aware that we have collected personal data from a child in a manner not permitted by law, we will take appropriate steps to delete or secure such data as required.
+              crm360 is intended for business use and is not directed to children. We do not knowingly collect personal data from children. If we become aware that we have collected personal data from a child in a manner not permitted by law, we will take appropriate steps to delete or secure such data as required.
             </p>
           </div>
         </section>
@@ -355,7 +355,7 @@ export default function PrivacyPolicyPage() {
           </div>
           <div className="p-5 rounded-2xl bg-gray-50 dark:bg-gray-700/40 border border-gray-100 dark:border-gray-700">
             <p className="text-sm leading-relaxed text-gray-700 dark:text-gray-300">
-              If you access CRM360 from outside the country where our systems or service providers are located, your information may be transferred to and processed in other countries. Where required, we will take steps to ensure that such transfers are carried out in accordance with applicable law.
+              If you access crm360 from outside the country where our systems or service providers are located, your information may be transferred to and processed in other countries. Where required, we will take steps to ensure that such transfers are carried out in accordance with applicable law.
             </p>
           </div>
         </section>
@@ -373,7 +373,7 @@ export default function PrivacyPolicyPage() {
           </div>
           <div className="p-5 rounded-2xl bg-gray-50 dark:bg-gray-700/40 border border-gray-100 dark:border-gray-700">
             <p className="text-sm leading-relaxed text-gray-700 dark:text-gray-300">
-              We may update this Privacy Policy from time to time. If we make material changes, we will update the effective date above and may provide additional notice where required by law. Your continued use of CRM360 after the updated policy becomes effective constitutes your acknowledgement of the revised policy.
+              We may update this Privacy Policy from time to time. If we make material changes, we will update the effective date above and may provide additional notice where required by law. Your continued use of crm360 after the updated policy becomes effective constitutes your acknowledgement of the revised policy.
             </p>
           </div>
         </section>
@@ -421,7 +421,7 @@ export default function PrivacyPolicyPage() {
                     Company / Operator
                   </h4>
                   <p className="text-sm font-semibold text-gray-900 dark:text-white">
-                    crm360 Inc.
+                    M360 Group
                   </p>
                 </div>
               </div>
@@ -435,7 +435,7 @@ export default function PrivacyPolicyPage() {
                     Headquarters
                   </h4>
                   <p className="text-sm font-semibold text-gray-900 dark:text-white">
-                    Victoria Island, Lagos, Nigeria
+                    426A Fasade, Omole Estate Phase 1, Lagos, Nigeria
                   </p>
                 </div>
               </div>

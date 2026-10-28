@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -11,7 +12,6 @@ import {
   BarChart3,
   PieChart,
 } from "lucide-react";
-import { ProductDemo } from "@/components/product/ProductDemo";
 import { ButtonLink, SIGNUP_URL } from "@/components/shared/Button";
 
 const modules = [
@@ -28,35 +28,42 @@ const modules = [
 
 export function Hero() {
   return (
-    <section className="relative isolate pt-28 sm:pt-36 overflow-hidden">
-      <div aria-hidden className="grid-lines absolute inset-x-0 top-0 h-[880px] -z-10" />
-      <div
-        aria-hidden
-        className="absolute left-1/2 top-[420px] -z-10 h-[520px] w-[1100px] max-w-[140vw] -translate-x-1/2 rounded-full bg-blue/15 blur-[120px]"
-      />
+    <section className="relative isolate pt-16">
+      {/* Background image panel, inset below the header. Its bottom padding is
+          where the dashboard frame (pulled up with a negative margin) overlaps. */}
+      <div className="relative isolate mx-2 sm:mx-3 overflow-hidden rounded-[28px] pt-20 sm:pt-28 pb-56 sm:pb-72 lg:pb-80">
+        <Image
+          src="/hero-road.jpg"
+          alt=""
+          fill
+          fetchPriority="high"
+          sizes="100vw"
+          className="hero-bg -z-10 object-cover object-[50%_72%]"
+        />
+        <div aria-hidden className="absolute inset-0 -z-10 bg-gradient-to-b from-[#06122b]/60 via-[#06122b]/35 to-[#06122b]/10" />
+        <div aria-hidden className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_50%_45%_at_50%_38%,rgb(6_18_43/0.45),transparent)]" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto text-center">
+        <div className="max-w-3xl mx-auto px-4 text-center">
           <Link
             href="#automation"
-            className="rise inline-flex items-center gap-2 pl-1 pr-3 py-1 rounded-full border border-line bg-paper/80 backdrop-blur text-sm text-ink-2 hover:border-ink-3 transition-colors"
+            className="blur-rise inline-flex items-center gap-2 pl-1 pr-3 py-1 rounded-full border border-white/25 bg-white/10 backdrop-blur text-sm text-white hover:border-white/50 transition-colors"
           >
-            <span className="px-2 py-0.5 rounded-full bg-ink text-paper text-xs font-semibold">
+            <span className="px-2 py-0.5 rounded-full bg-white text-[#0a1120] text-xs font-semibold">
               Soon
             </span>
             Bulk email and automation
-            <ArrowRight className="w-3.5 h-3.5 text-ink-3" />
+            <ArrowRight className="w-3.5 h-3.5 text-white/70" />
           </Link>
 
           <h1
-            className="rise mt-7 font-display text-[2.9rem] leading-[1] sm:text-7xl lg:text-[5.25rem] font-bold tracking-[-0.045em] text-ink text-balance"
+            className="blur-rise mt-7 font-display text-[2.9rem] leading-[1] sm:text-7xl lg:text-[5.25rem] font-bold tracking-[-0.045em] text-white text-balance"
             style={{ animationDelay: "60ms" }}
           >
             Know where every deal stands.
           </h1>
 
           <p
-            className="rise mt-6 text-lg sm:text-xl text-ink-2 leading-relaxed max-w-xl mx-auto text-pretty"
+            className="blur-rise mt-6 text-lg sm:text-xl text-white/85 leading-relaxed max-w-xl mx-auto text-pretty"
             style={{ animationDelay: "120ms" }}
           >
             crm360 puts your inbox, contacts, pipeline and follow-ups in one
@@ -64,26 +71,35 @@ export function Hero() {
           </p>
 
           <div
-            className="rise mt-9 flex flex-col sm:flex-row gap-3 justify-center"
+            className="blur-rise mt-9 flex flex-col sm:flex-row gap-3 justify-center"
             style={{ animationDelay: "180ms" }}
           >
-            <ButtonLink href={SIGNUP_URL}>Start free trial</ButtonLink>
-            <ButtonLink href="#features" variant="secondary">
+            <ButtonLink href={SIGNUP_URL} variant="dark">Start free trial</ButtonLink>
+            <ButtonLink href="#features" variant="ghost-night" className="backdrop-blur">
               See what&apos;s inside
             </ButtonLink>
           </div>
-          <p className="rise mt-4 text-sm text-ink-3" style={{ animationDelay: "220ms" }}>
+          <p className="blur-rise mt-4 text-sm text-white/70" style={{ animationDelay: "220ms" }}>
             14-day free trial. No credit card required.
           </p>
         </div>
+      </div>
 
-        <div className="rise relative mt-16 lg:mt-20" style={{ animationDelay: "320ms" }}>
-          <div className="rounded-[22px] p-1.5 sm:p-2 bg-paper/60 border border-line backdrop-blur">
-            <ProductDemo hint={false} />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          className="blur-rise-lg relative -mt-40 sm:-mt-56 lg:-mt-64"
+          style={{ animationDelay: "320ms" }}
+        >
+          <div className="rounded-[22px] p-1.5 sm:p-2 bg-paper/60 border border-line backdrop-blur shadow-[0_30px_80px_-20px_rgb(6_18_43/0.45)]">
+            <Image
+              src="/dashboard-preview.png"
+              alt="crm360 dashboard showing open deals, revenue, a pipeline revenue chart and recent contacts"
+              width={1425}
+              height={719}
+              sizes="(max-width: 1280px) 100vw, 1216px"
+              className="w-full h-auto rounded-[14px] border border-line"
+            />
           </div>
-          <p className="mt-4 text-center text-sm text-ink-3 hidden md:block">
-            This is live. Pick Inbox, AI Writer or Bulk email in the sidebar.
-          </p>
         </div>
       </div>
 

@@ -1,7 +1,6 @@
 import { PainPoints } from "@/components/PainPoints";
 import { UseCases } from "@/components/UseCases";
 import { Pricing } from "@/components/Pricing";
-import { Resources } from "@/components/Resources";
 import { About } from "@/components/About";
 import { FinalCta } from "@/components/FinalCta";
 
@@ -11,7 +10,6 @@ export function AfterFeatures() {
     <>
       <UseCases />
       <Pricing />
-      <Resources />
       <About />
       <FinalCta />
     </>

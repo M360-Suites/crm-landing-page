@@ -548,7 +548,7 @@ export default function TermsOfServicePage() {
                     Company / Operator
                   </h4>
                   <p className="text-sm font-semibold text-gray-900 dark:text-white">
-                    crm360 Inc.
+                    M360 Group
                   </p>
                 </div>
               </div>
@@ -562,7 +562,7 @@ export default function TermsOfServicePage() {
                     Headquarters
                   </h4>
                   <p className="text-sm font-semibold text-gray-900 dark:text-white">
-                    Victoria Island, Lagos, Nigeria
+                    426A Fasade, Omole Estate Phase 1, Lagos, Nigeria
                   </p>
                 </div>
               </div>

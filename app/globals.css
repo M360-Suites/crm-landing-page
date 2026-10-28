@@ -146,6 +146,45 @@ body {
   animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
 }
 
+/* Hero entrance: content comes up out of a blur */
+@keyframes blur-rise {
+  from {
+    opacity: 0;
+    filter: blur(12px);
+    transform: translateY(24px);
+  }
+}
+
+.blur-rise {
+  animation: blur-rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+/* Hero image: a longer, deeper version of the same move */
+@keyframes blur-rise-lg {
+  from {
+    opacity: 0;
+    filter: blur(28px);
+    transform: translateY(64px) scale(0.97);
+  }
+}
+
+.blur-rise-lg {
+  animation: blur-rise-lg 1.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Hero background: overscaled so the drift never shows an edge of the panel */
+@keyframes hero-bg {
+  from {
+    opacity: 0;
+    filter: blur(30px);
+    transform: translateY(40px) scale(1.12);
+  }
+}
+
+.hero-bg {
+  animation: hero-bg 1.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
 @keyframes pop {
   0%, 40% {
     opacity: 0;
@@ -177,6 +216,9 @@ body {
   }
   .marquee,
   .rise,
+  .blur-rise,
+  .blur-rise-lg,
+  .hero-bg,
   .pop {
     animation: none;
   }
