@@ -25,6 +25,13 @@
   --sky: #8fd3ff;
   --on-color: #0f172a;
 
+  /* Dark band: the same in both themes so it always reads as a deliberate contrast block */
+  --night: #0a1120;
+  --night-2: #111a2c;
+  --night-line: #1f2b42;
+  --night-ink: #e8eef5;
+  --night-ink-3: #8593a6;
+
   /* Legacy names still used by the legal pages */
   --background: var(--paper);
   --foreground: var(--ink);
@@ -48,6 +55,8 @@
     --clay: #f08a74;
     --clay-soft: #33201a;
     --sidebar: #0f1828;
+    --night: #060b16;
+    --night-2: #0d1526;
   }
 }
 
@@ -74,6 +83,11 @@
   --color-mint: var(--mint);
   --color-sky: var(--sky);
   --color-on-color: var(--on-color);
+  --color-night: var(--night);
+  --color-night-2: var(--night-2);
+  --color-night-line: var(--night-line);
+  --color-night-ink: var(--night-ink);
+  --color-night-ink-3: var(--night-ink-3);
   --color-crm-rust: var(--color-primary);
   --color-crm-peach: var(--color-accent);
   --color-crm-cream: var(--background);
@@ -98,6 +112,51 @@ body {
   border-radius: 6px;
 }
 
+/* Faint ruled grid behind the hero and final CTA, fading out at the edges */
+.grid-lines {
+  background-image:
+    linear-gradient(to right, var(--line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--line) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: center top;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, black 30%, transparent 75%);
+}
+
+.grid-lines-night {
+  background-image:
+    linear-gradient(to right, var(--night-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--night-line) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(ellipse 60% 70% at 50% 50%, black 20%, transparent 80%);
+}
+
+.dots {
+  background-image: radial-gradient(var(--line) 1px, transparent 1px);
+  background-size: 14px 14px;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+}
+
+.rise {
+  animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+@keyframes pop {
+  0%, 40% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}
+
+.pop {
+  animation: pop 1.6s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
 @keyframes marquee {
   to {
     transform: translateX(-50%);
@@ -116,7 +175,9 @@ body {
   html {
     scroll-behavior: auto;
   }
-  .marquee {
+  .marquee,
+  .rise,
+  .pop {
     animation: none;
   }
 }

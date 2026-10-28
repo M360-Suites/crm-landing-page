@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import { ProductDemo } from "../_parts/ProductDemo";
-import { groups } from "../_parts/features";
-import { GroupPreview } from "../_parts/Crops";
+import { ProductDemo } from "@/components/product/ProductDemo";
+import { groups } from "@/components/product/features";
+import { GroupPreview } from "@/components/product/Crops";
 import { AfterFeatures, PainPoints, SoonBadge, heroCopy } from "../_parts/Rest";
 import { SectionHeader } from "@/components/shared/SectionHeader";
 

@@ -1,3 +1,4 @@
+import { Check, X } from "lucide-react";
 import { SectionHeader } from "@/components/shared/SectionHeader";
 
 const pairs = [
@@ -21,37 +22,40 @@ const pairs = [
 
 export function PainPoints() {
   return (
-    <section id="why-crm360" className="px-3 sm:px-6 lg:px-8 pt-24 lg:pt-32">
-      <div className="max-w-7xl mx-auto rounded-[2.5rem] bg-blue text-white border-[3px] border-on-color px-6 py-14 sm:px-12 lg:px-16 lg:py-20">
+    <section id="why-crm360" className="py-24 lg:py-32 text-ink">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-12 lg:gap-16">
         <SectionHeader
-          title={
-            <>
-              Most sales teams don&apos;t have a people problem. They have a
-              tools problem.
-            </>
-          }
+          className="lg:col-span-5 lg:self-start lg:sticky lg:top-28"
+          eyebrow="Why crm360"
+          title="Most sales teams don't have a people problem. They have a tools problem."
           description="Good reps miss targets when the system around them is scattered. Here is what changes when it isn't."
         />
 
-        <ul className="mt-14 grid gap-4 md:grid-cols-2">
-          {pairs.map((p) => (
-            <li
-              key={p.pain}
-              className="rounded-3xl bg-paper text-ink border-[3px] border-on-color p-6 lg:p-7"
-            >
-              <p className="text-ink-3 line-through decoration-bubble decoration-[3px]">
-                {p.pain}
-              </p>
-              <p className="mt-4 flex gap-3 font-display text-xl font-bold leading-snug tracking-[-0.02em]">
-                <svg viewBox="0 0 24 24" className="w-7 h-7 shrink-0" aria-hidden>
-                  <circle cx="12" cy="12" r="11" fill="var(--mint)" stroke="var(--on-color)" strokeWidth="2" />
-                  <path d="M7 12.5 L10.5 16 L17 8.5" fill="none" stroke="var(--on-color)" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-                {p.fix}
-              </p>
-            </li>
-          ))}
-        </ul>
+        <div className="lg:col-span-7 rounded-3xl border border-line overflow-hidden">
+          <div className="hidden sm:grid grid-cols-2 bg-mist border-b border-line text-xs font-semibold uppercase tracking-[0.12em] text-ink-3">
+            <p className="px-6 py-3">Without one system</p>
+            <p className="px-6 py-3 border-l border-line text-blue">With crm360</p>
+          </div>
+          <ul>
+            {pairs.map((p, i) => (
+              <li
+                key={p.pain}
+                className={`grid sm:grid-cols-2 ${i > 0 ? "border-t border-line" : ""}`}
+              >
+                <p className="flex gap-3 px-6 pt-6 pb-3 sm:py-6 text-ink-3 leading-relaxed">
+                  <X className="w-4 h-4 mt-1 shrink-0 text-clay" strokeWidth={2.5} />
+                  {p.pain}
+                </p>
+                <p className="flex gap-3 px-6 pb-6 pt-0 sm:py-6 sm:border-l border-line font-medium text-ink leading-relaxed">
+                  <span className="w-5 h-5 mt-0.5 shrink-0 rounded-full bg-teal-soft text-teal grid place-items-center">
+                    <Check className="w-3 h-3" strokeWidth={3} />
+                  </span>
+                  {p.fix}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </section>
   );

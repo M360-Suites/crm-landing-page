@@ -8,6 +8,7 @@ import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { label: "Features", href: "/#features" },
+  { label: "Automation", href: "/#automation" },
   { label: "Pricing", href: "/#pricing" },
   { label: "Resources", href: "/#resources" },
   { label: "About", href: "/#about" },
@@ -42,7 +43,7 @@ export function Header() {
                 width={480}
                 height={278}
                 className="h-9 w-auto"
-                priority
+                preload
               />
             </Link>
 
@@ -67,7 +68,7 @@ export function Header() {
               </a>
               <a
                 href="https://app.crm360online.com/register"
-                className="hidden sm:block text-sm font-semibold bg-blue text-white px-4 py-2 rounded-full hover:bg-blue-deep transition-colors"
+                className="hidden sm:inline-flex items-center h-9 text-sm font-semibold bg-blue text-white px-4 rounded-[10px] hover:bg-blue-deep transition-colors"
               >
                 Start free trial
               </a>
@@ -111,13 +112,13 @@ export function Header() {
               <div className="mt-3 pt-3 border-t border-line flex flex-col gap-2 pb-2">
                 <a
                   href="https://app.crm360online.com"
-                  className="block text-center py-3 rounded-full text-sm font-medium text-ink border border-line"
+                  className="block text-center py-3 rounded-[10px] text-sm font-medium text-ink border border-line"
                 >
                   Log in
                 </a>
                 <a
                   href="https://app.crm360online.com/register"
-                  className="block text-center py-3 rounded-full text-sm font-semibold bg-blue text-white"
+                  className="block text-center py-3 rounded-[10px] text-sm font-semibold bg-blue text-white"
                 >
                   Start free trial
                 </a>

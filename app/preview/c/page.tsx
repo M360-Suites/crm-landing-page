@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { ProductDemo } from "../_parts/ProductDemo";
-import { groups } from "../_parts/features";
+import { ProductDemo } from "@/components/product/ProductDemo";
+import { groups } from "@/components/product/features";
 import { AfterFeatures, PainPoints, heroCopy } from "../_parts/Rest";
 
 export const metadata: Metadata = { title: "Preview C", robots: { index: false } };

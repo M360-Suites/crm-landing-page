@@ -74,7 +74,16 @@ export function ProductDemo({ hint = true }: { hint?: boolean }) {
             ))}
           </div>
 
-          <div className="rounded-2xl border border-line bg-paper shadow-[0_1px_0_var(--line),0_30px_60px_-30px_rgb(15_23_42/0.25)] overflow-hidden flex h-[400px] md:h-[460px]">
+          <div className="rounded-2xl border border-line bg-paper shadow-[0_1px_0_var(--line),0_30px_60px_-30px_rgb(15_23_42/0.25)] overflow-hidden">
+          <div aria-hidden className="h-9 border-b border-line bg-sidebar flex items-center gap-1.5 px-3.5">
+            <span className="w-2.5 h-2.5 rounded-full bg-line" />
+            <span className="w-2.5 h-2.5 rounded-full bg-line" />
+            <span className="w-2.5 h-2.5 rounded-full bg-line" />
+            <span className="mx-auto -translate-x-6 text-[11px] text-ink-3 tracking-wide">
+              app.crm360online.com
+            </span>
+          </div>
+          <div className="flex h-[400px] md:h-[460px]">
             <aside className="w-56 shrink-0 bg-sidebar border-r border-line hidden md:flex flex-col p-3">
               <div className="flex items-center gap-2 px-2 py-2 mb-4">
                 <span className="w-6 h-6 rounded-md bg-clay text-white text-[11px] font-bold grid place-items-center">
@@ -143,7 +152,8 @@ export function ProductDemo({ hint = true }: { hint?: boolean }) {
               </div>
             </div>
           </div>
-          {hint && <p className="mt-3 text-sm text-ink-3 hidden md:block">
+          </div>
+          {hint &&<p className="mt-3 text-sm text-ink-3 hidden md:block">
             Try it: pick Inbox, Pipelines, AI Writer or Bulk email in the sidebar.
           </p>}
         </div>

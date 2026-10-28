@@ -1,112 +1,104 @@
-"use client";
-
-import { useRef } from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import Link from "next/link";
 import {
-  BubbleSticker,
-  CalendarSticker,
-  DealSticker,
-  EnvelopeSticker,
-  SmileySticker,
-  SparkleSticker,
-  WonSticker,
-} from "@/components/shared/Stickers";
+  ArrowRight,
+  Inbox,
+  Users,
+  Building2,
+  KanbanSquare,
+  Calendar,
+  FileText,
+  Bot,
+  BarChart3,
+  PieChart,
+} from "lucide-react";
+import { ProductDemo } from "@/components/product/ProductDemo";
+import { ButtonLink, SIGNUP_URL } from "@/components/shared/Button";
 
 const modules = [
-  "Inbox",
-  "Contacts",
-  "Companies",
-  "Pipelines",
-  "Task & Calendar",
-  "Documents",
-  "AI Writer",
-  "Analytics",
-  "Report",
-];
-
-// Positions are tuned so stickers frame the headline without covering it.
-const stickers = [
-  { Comp: EnvelopeSticker, label: "New email", rotate: -12, className: "left-[3%] top-[2%] w-16 sm:w-28 lg:left-[6%] lg:top-[12%] lg:w-36" },
-  { Comp: BubbleSticker, label: "Reply", rotate: 10, className: "right-[3%] top-[1%] w-16 sm:w-28 lg:right-[7%] lg:top-[8%] lg:w-36" },
-  { Comp: WonSticker, label: "Deal won", rotate: 8, className: "hidden sm:block left-[4%] top-[46%] w-24 lg:left-[2%] lg:w-32" },
-  { Comp: CalendarSticker, label: "Meeting", rotate: -8, className: "hidden sm:block right-[2%] top-[44%] w-24 lg:right-[3%] lg:w-32" },
-  { Comp: SmileySticker, label: "Happy customer", rotate: -6, className: "left-[6%] bottom-[1%] w-14 sm:w-24 lg:left-[14%] lg:bottom-[6%] lg:w-28" },
-  { Comp: DealSticker, label: "Deal value", rotate: 14, className: "right-[6%] bottom-[1%] w-14 sm:w-24 lg:right-[15%] lg:bottom-[4%] lg:w-28" },
-  { Comp: SparkleSticker, label: "AI draft", rotate: 0, className: "hidden lg:block left-[30%] bottom-[-2%] w-20" },
+  { icon: Inbox, label: "Inbox" },
+  { icon: Users, label: "Contacts" },
+  { icon: Building2, label: "Companies" },
+  { icon: KanbanSquare, label: "Pipelines" },
+  { icon: Calendar, label: "Task & Calendar" },
+  { icon: FileText, label: "Documents" },
+  { icon: Bot, label: "AI Writer" },
+  { icon: BarChart3, label: "Analytics" },
+  { icon: PieChart, label: "Report" },
 ];
 
 export function Hero() {
-  const reduce = useReducedMotion();
-  const area = useRef<HTMLDivElement>(null);
-  const instant = { duration: 0 };
-
   return (
-    <section className="relative pt-24 lg:pt-28 overflow-hidden">
-      <div ref={area} className="relative max-w-[90rem] mx-auto min-h-[640px] sm:min-h-[680px] lg:min-h-[760px] flex items-center">
-        {/* The page's one orchestrated moment: stickers land, then they're yours to move. */}
-        {stickers.map(({ Comp, label, rotate, className }, i) => (
-          <motion.div
-            key={label}
-            drag
-            dragConstraints={area}
-            dragElastic={0.15}
-            whileHover={{ scale: 1.06, rotate: rotate + 4 }}
-            whileDrag={{ scale: 1.12, rotate: 0, cursor: "grabbing" }}
-            initial={{ opacity: 0, scale: 0.3, rotate: rotate - 30 }}
-            animate={{ opacity: 1, scale: 1, rotate }}
-            transition={
-              reduce
-                ? instant
-                : { type: "spring", stiffness: 260, damping: 16, delay: 0.25 + i * 0.08 }
-            }
-            className={`absolute z-10 cursor-grab touch-none select-none ${className}`}
-          >
-            <Comp className="w-full h-auto drop-shadow-[0_6px_0_rgb(15_23_42/0.12)]" />
-          </motion.div>
-        ))}
+    <section className="relative isolate pt-28 sm:pt-36 overflow-hidden">
+      <div aria-hidden className="grid-lines absolute inset-x-0 top-0 h-[880px] -z-10" />
+      <div
+        aria-hidden
+        className="absolute left-1/2 top-[420px] -z-10 h-[520px] w-[1100px] max-w-[140vw] -translate-x-1/2 rounded-full bg-blue/15 blur-[120px]"
+      />
 
-        <div className="relative w-full px-4 py-28 sm:py-0 sm:px-6 lg:px-8 text-center pointer-events-none">
-          <h1 className="mx-auto max-w-[10ch] font-display text-[3.2rem] leading-[0.92] sm:text-8xl lg:text-[7.5rem] font-extrabold tracking-[-0.055em] text-ink">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-3xl mx-auto text-center">
+          <Link
+            href="#automation"
+            className="rise inline-flex items-center gap-2 pl-1 pr-3 py-1 rounded-full border border-line bg-paper/80 backdrop-blur text-sm text-ink-2 hover:border-ink-3 transition-colors"
+          >
+            <span className="px-2 py-0.5 rounded-full bg-ink text-paper text-xs font-semibold">
+              Soon
+            </span>
+            Bulk email and automation
+            <ArrowRight className="w-3.5 h-3.5 text-ink-3" />
+          </Link>
+
+          <h1
+            className="rise mt-7 font-display text-[2.9rem] leading-[1] sm:text-7xl lg:text-[5.25rem] font-bold tracking-[-0.045em] text-ink text-balance"
+            style={{ animationDelay: "60ms" }}
+          >
             Know where every deal stands.
           </h1>
-          <p className="mt-8 mx-auto max-w-xl text-lg sm:text-xl text-ink-2 leading-relaxed">
+
+          <p
+            className="rise mt-6 text-lg sm:text-xl text-ink-2 leading-relaxed max-w-xl mx-auto text-pretty"
+            style={{ animationDelay: "120ms" }}
+          >
             crm360 puts your inbox, contacts, pipeline and follow-ups in one
             workspace, so your team spends the day selling instead of searching.
           </p>
-          <div className="mt-10 flex flex-col sm:flex-row justify-center gap-3 pointer-events-auto">
-            <a
-              href="https://app.crm360online.com/register"
-              className="inline-flex justify-center items-center px-8 py-4 rounded-full bg-blue text-white text-lg font-bold border-[3px] border-on-color hover:-translate-y-0.5 hover:shadow-[0_5px_0_var(--on-color)] transition-[transform,box-shadow]"
-            >
-              Start free trial
-            </a>
-            <a
-              href="#features"
-              className="inline-flex justify-center items-center px-8 py-4 rounded-full bg-paper text-ink text-lg font-bold border-[3px] border-ink hover:bg-sun hover:text-on-color hover:border-on-color transition-colors"
-            >
+
+          <div
+            className="rise mt-9 flex flex-col sm:flex-row gap-3 justify-center"
+            style={{ animationDelay: "180ms" }}
+          >
+            <ButtonLink href={SIGNUP_URL}>Start free trial</ButtonLink>
+            <ButtonLink href="#features" variant="secondary">
               See what&apos;s inside
-            </a>
+            </ButtonLink>
           </div>
-          <p className="mt-5 text-sm text-ink-3">
+          <p className="rise mt-4 text-sm text-ink-3" style={{ animationDelay: "220ms" }}>
             14-day free trial. No credit card required.
-            <span className="hidden lg:inline"> Go on, drag a sticker.</span>
+          </p>
+        </div>
+
+        <div className="rise relative mt-16 lg:mt-20" style={{ animationDelay: "320ms" }}>
+          <div className="rounded-[22px] p-1.5 sm:p-2 bg-paper/60 border border-line backdrop-blur">
+            <ProductDemo hint={false} />
+          </div>
+          <p className="mt-4 text-center text-sm text-ink-3 hidden md:block">
+            This is live. Pick Inbox, AI Writer or Bulk email in the sidebar.
           </p>
         </div>
       </div>
 
-      {/* Module ticker */}
-      <div className="relative left-1/2 w-[110vw] -translate-x-1/2 mt-6 -rotate-[1.5deg] bg-sun border-y-[3px] border-on-color py-4 overflow-hidden">
-        <ul className="marquee flex w-max" aria-label="What's included">
-          {[...modules, ...modules].map((m, i) => (
-            <li
-              key={`${m}-${i}`}
-              aria-hidden={i >= modules.length}
-              className="flex items-center gap-6 pr-6 font-display text-2xl sm:text-3xl font-extrabold tracking-[-0.03em] text-on-color whitespace-nowrap"
-            >
-              {m}
-              <svg viewBox="0 0 20 20" className="w-5 h-5" aria-hidden>
-                <path d="M10 0 C11 7 13 9 20 10 C13 11 11 13 10 20 C9 13 7 11 0 10 C7 9 9 7 10 0Z" fill="var(--on-color)" />
-              </svg>
+      {/* Stands in for a logo wall: what's in the box, honestly stated. */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20 lg:mt-24">
+        <p className="text-center text-sm font-medium text-ink-3">
+          Nine tools in one workspace, one login, one bill
+        </p>
+        <ul className="mt-6 flex flex-wrap justify-center gap-x-8 gap-y-4">
+          {modules.map((m) => (
+            <li key={m.label} className="flex items-center gap-2 text-ink-2">
+              <m.icon className="w-4 h-4 text-ink-3" strokeWidth={2} />
+              <span className="font-display text-[15px] font-semibold tracking-[-0.01em]">
+                {m.label}
+              </span>
             </li>
           ))}
         </ul>
