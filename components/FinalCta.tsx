@@ -19,9 +19,6 @@ export function FinalCta() {
           <ButtonLink href={SIGNUP_URL} variant="dark">
             Start free trial
           </ButtonLink>
-          <ButtonLink href="mailto:support@crm360online.com" variant="ghost-night">
-            Talk to sales
-          </ButtonLink>
         </div>
         <p className="mt-5 text-sm text-night-ink-3">14 days free. No credit card required.</p>
       </div>

@@ -20,13 +20,20 @@ const columns = [
       { label: "Terms of Service", href: "/terms" },
     ],
   },
+  {
+    title: "Contact",
+    links: [
+      { label: "hello@crm360online.com", href: "mailto:hello@crm360online.com" },
+      { label: "08064968725", href: "tel:+2348064968725" },
+    ],
+  },
 ];
 
 export function Footer() {
   return (
     <footer className="pt-20 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-10 mb-12">
           <div className="col-span-2">
             <Image src="/logo-crm360.png" alt="crm360" width={480} height={278} className="h-9 w-auto" />
             <p className="mt-4 text-sm text-ink-3 max-w-xs leading-relaxed">

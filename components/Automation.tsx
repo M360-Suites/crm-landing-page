@@ -58,6 +58,7 @@ function Node({
   title,
   detail,
   delay,
+  compact = false,
   className = "",
 }: {
   icon: typeof Send;
@@ -65,6 +66,8 @@ function Node({
   title: string;
   detail: string;
   delay: number;
+  /** Side-by-side branch nodes: drop the kind chip on phones so the title has room */
+  compact?: boolean;
   className?: string;
 }) {
   return (
@@ -76,11 +79,11 @@ function Node({
         <Check className="w-2.5 h-2.5" strokeWidth={3} /> Done
       </span>
       <div className="flex items-center gap-2">
-        <span className="w-6 h-6 rounded-md bg-ice text-blue-deep grid place-items-center">
+        <span className="w-6 h-6 shrink-0 rounded-md bg-ice text-blue-deep grid place-items-center">
           <Icon className="w-3.5 h-3.5" />
         </span>
-        <span className="text-[13px] font-semibold text-ink truncate">{title}</span>
-        <span className="ml-auto text-[10px] font-medium px-1.5 py-0.5 rounded border border-line text-ink-3">
+        <span className="min-w-0 text-[13px] leading-tight font-semibold text-ink">{title}</span>
+        <span className={`ml-auto shrink-0 text-[10px] font-medium px-1.5 py-0.5 rounded border border-line text-ink-3 ${compact ? "hidden sm:inline" : ""}`}>
           {kind}
         </span>
       </div>
@@ -110,11 +113,11 @@ function Workflow() {
         <div className="grid grid-cols-2 gap-3 w-full">
           <div className="flex flex-col items-center gap-2">
             <span className="text-[11px] font-medium px-2 py-0.5 rounded-full bg-paper border border-line text-ink-2">Replied</span>
-            <Node icon={KanbanSquare} kind="Action" title="Move to Qualified" detail="Assign to deal owner" delay={1200} />
+            <Node icon={KanbanSquare} kind="Action" title="Move to Qualified" detail="Assign to deal owner" delay={1200} compact />
           </div>
           <div className="flex flex-col items-center gap-2">
             <span className="text-[11px] font-medium px-2 py-0.5 rounded-full bg-paper border border-line text-ink-2">No reply</span>
-            <Node icon={MailOpen} kind="Action" title="Send follow-up" detail="Template: Renewal check-in" delay={1500} />
+            <Node icon={MailOpen} kind="Action" title="Send follow-up" detail="Template: Renewal check-in" delay={1500} compact />
           </div>
         </div>
       </div>

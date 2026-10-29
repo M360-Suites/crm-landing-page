@@ -96,11 +96,15 @@
 }
 
 html {
+  overflow-x: clip;
   scroll-behavior: smooth;
   scroll-padding-top: 5rem;
 }
 
 body {
+  /* Safety net: oversized decorative layers (blurred glows, scaled hero image)
+     must never widen the page on phones. clip, unlike hidden, keeps sticky working. */
+  overflow-x: clip;
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font-instrument), system-ui, sans-serif;
